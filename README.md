@@ -2,32 +2,14 @@
 
 Project Rubiks cube application
 
-## level 1
+## data model
 
-## level 1
+|test|test|test|
+|test|test|test|
+|test|test|test|
 
-some paragraph
-
-### level 2
-
-- list
-- list 
-- list
-
-hieronder iets met indenting
-
-    some command
-
-hieronder een code snippet
-
- ```
- this is a code snippet
- ```
- 
-een github special is todo list
-
-- [ ] dit
-- [ ] en dit
-- [ ] en dit ook
-
-en zo kan ik inline een code snippet doen kijk `command` zo
+```
+[-1, 1] [ 0, 1] [ 1, 1]
+[-1, 0] [ 0, 0] [ 1, 0]
+[-1,-1] [ 0,-1] [ 1,-1]
+```
