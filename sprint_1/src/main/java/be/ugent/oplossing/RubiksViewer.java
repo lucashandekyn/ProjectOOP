@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -31,7 +32,7 @@ public class RubiksViewer extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws FileNotFoundException {
+    public void start(@NotNull final Stage primaryStage) throws FileNotFoundException {
         final Group root = new Group();
         final Scene scene = new Scene(root, 500, 500, true);
         scene.setFill(BACKGROUND_COLOR);
@@ -39,9 +40,9 @@ public class RubiksViewer extends Application {
         addCamera(scene);
         addMouseHandlers(scene);
 
-        List<IFace> faces = initRubikCube();
-        List<Node> shapes = faces.stream().map(Shape3DRectangle::new).collect(Collectors.toList());
-        Group meshGroup = new Group(shapes);
+        final List<IFace> faces = initRubikCube();
+        final List<Node> shapes = faces.stream().map(Shape3DRectangle::new).collect(Collectors.toList());
+        final Group meshGroup = new Group(shapes);
 
         meshGroup.getTransforms().addAll(rotateX, rotateY);
         root.getChildren().addAll(meshGroup, new AmbientLight(Color.WHITE));
@@ -52,33 +53,34 @@ public class RubiksViewer extends Application {
     }
 
     private List<IFace> initRubikCube() throws FileNotFoundException {
-        // Haal deze regels uit commentaar; dan zal het RubiksKubus-object gebruikt worden
+        // Haal deze regels uit commentaar; dan zal het RubiksKubus-object gebruikt
+        // worden
         // Maak je eigen implementatie van de rubiks interface.
-//        IRubikCube cube = new ... ;
-//        return cube.getAllFaces();
+        // IRubikCube cube = new ... ;
+        // return cube.getAllFaces();
 
         return RubiksReader.ReadFromFile("test.csv");
     }
 
-    private void addCamera(Scene scene) {
-        PerspectiveCamera perspectiveCamera = new PerspectiveCamera(true);
+    private void addCamera(final Scene scene) {
+        final PerspectiveCamera perspectiveCamera = new PerspectiveCamera(true);
         perspectiveCamera.setNearClip(0.1);
         perspectiveCamera.setFarClip(10000.0);
         perspectiveCamera.setTranslateZ(-20);
         scene.setCamera(perspectiveCamera);
     }
 
-    private void addMouseHandlers(Scene scene) {
+    private void addMouseHandlers(final Scene scene) {
         scene.setOnMousePressed(me -> {
             anchorX = me.getSceneX();
             anchorY = me.getSceneY();
         });
 
         scene.setOnMouseDragged(me -> {
-            rotateX.setAngle(rotateX.getAngle()+(me.getSceneY() - anchorY)/2);
-            rotateY.setAngle(rotateY.getAngle()-(me.getSceneX() - anchorX)/2);
+            rotateX.setAngle(rotateX.getAngle() + (me.getSceneY() - anchorY) / 2);
+            rotateY.setAngle(rotateY.getAngle() - (me.getSceneX() - anchorX) / 2);
             anchorX = me.getSceneX();
             anchorY = me.getSceneY();
         });
     }
-} 
+}

@@ -38,7 +38,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--        <dependency>-->
 <!--            <groupId>org.fxyz3d</groupId>-->
 <!--            <artifactId>fxyz3d</artifactId>-->
 <!--            <version>0.5.4</version>-->
