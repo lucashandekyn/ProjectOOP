@@ -57,7 +57,6 @@ public class RubiksViewer extends Application {
         // Maak je eigen implementatie van de rubiks interface.
 //        IRubikCube cube = new RubiksKubus();
 //        return cube.getAllFaces();
-
         return RubiksReader.ReadFromFile("test.csv");
     }
 

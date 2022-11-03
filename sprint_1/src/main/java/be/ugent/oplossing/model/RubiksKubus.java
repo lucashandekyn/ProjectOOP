@@ -1,8 +1,11 @@
 package be.ugent.oplossing.model;
 
-import java.util.List;
+import javafx.scene.paint.Color;
 
+import java.util.List;
 public class RubiksKubus implements IRubikCube {
+
+    private Color[] kleuren = {Color.BLACK, Color.BLUE, Color.ORANGE, Color.GREEN, Color.YELLOW, Color.RED, Color.WHITE};
     public RubiksKubus() {
 
     }
