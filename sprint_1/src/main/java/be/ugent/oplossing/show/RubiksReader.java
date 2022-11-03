@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class RubiksReader {
     public static List<IFace> ReadFromFile(String filename) throws FileNotFoundException {
-        Scanner sc = new Scanner(new File(Objects.requireNonNull(RubiksReader.class.getResource(filename)).getFile()));
+        Scanner sc = new Scanner(new File((RubiksReader.class.getResource(filename)).getFile()));
         List<IFace> faces = new ArrayList<>();
 
         while (sc.hasNextLine()) {

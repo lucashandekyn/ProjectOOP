@@ -9,7 +9,7 @@ public class FaceView implements IFace {
     private final Color color;
     private final Point3D[] corners;
 
-    public FaceView(String color, Point3D[] corners) {
+    public FaceView(final String color, final Point3D[] corners) {
         this.color = switch (color) {
             case "RED" -> Color.RED;
             case "GREEN" -> Color.GREEN;
@@ -17,6 +17,7 @@ public class FaceView implements IFace {
             case "YELLOW" -> Color.YELLOW;
             case "ORANGE" -> Color.ORANGE;
             case "WHITE" -> Color.WHITE;
+            case "PURPLE" -> Color.PURPLE;
             default -> Color.BLACK;
         };
         this.corners = corners;
