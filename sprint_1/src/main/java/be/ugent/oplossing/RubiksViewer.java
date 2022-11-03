@@ -2,6 +2,7 @@ package be.ugent.oplossing;
 
 import be.ugent.oplossing.model.IFace;
 import be.ugent.oplossing.model.IRubikCube;
+import be.ugent.oplossing.model.RubiksKubus;
 import be.ugent.oplossing.show.RubiksReader;
 import be.ugent.oplossing.show.Shape3DRectangle;
 import javafx.application.Application;
@@ -54,7 +55,7 @@ public class RubiksViewer extends Application {
     private List<IFace> initRubikCube() throws FileNotFoundException {
         // Haal deze regels uit commentaar; dan zal het RubiksKubus-object gebruikt worden
         // Maak je eigen implementatie van de rubiks interface.
-//        IRubikCube cube = new ... ;
+//        IRubikCube cube = new RubiksKubus();
 //        return cube.getAllFaces();
 
         return RubiksReader.ReadFromFile("test.csv");
