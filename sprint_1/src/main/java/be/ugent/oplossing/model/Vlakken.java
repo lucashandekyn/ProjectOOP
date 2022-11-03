@@ -7,8 +7,7 @@ public class Vlakken implements IFace{
     private Point3D[] hoeken;
     private Color kleur;
 
-    public Vlakken(Color kleur, Point3D hoeka, Point3D hoekb, Point3D hoekc, Point3D hoekd) {
-        this.kleur = kleur;
+    public Vlakken(Point3D hoeka, Point3D hoekb, Point3D hoekc, Point3D hoekd) {
         hoeken = new Point3D[4];// 4 hoekpunten van 1 vlakje
         this.hoeken[0] = hoeka;
         this.hoeken[1] = hoekb;
@@ -19,7 +18,7 @@ public class Vlakken implements IFace{
 
     @Override
     public Color getFaceColor() {
-        return this.kleur;
+        return Color.BLACK;
     }
 
     @Override

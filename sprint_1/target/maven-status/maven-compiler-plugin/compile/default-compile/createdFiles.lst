@@ -1,0 +1,11 @@
+be/ugent/oplossing/model/Main.class
+be/ugent/oplossing/show/Shape3DRectangle.class
+be/ugent/oplossing/show/RubiksReader.class
+module-info.class
+be/ugent/oplossing/show/FaceView.class
+be/ugent/oplossing/model/IFace.class
+be/ugent/oplossing/RubiksViewer.class
+be/ugent/oplossing/model/RubiksKubus.class
+be/ugent/oplossing/model/KleineKubusjes.class
+be/ugent/oplossing/model/IRubikCube.class
+be/ugent/oplossing/model/Vlakken.class

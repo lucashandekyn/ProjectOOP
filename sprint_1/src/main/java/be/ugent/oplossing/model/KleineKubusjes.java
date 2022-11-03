@@ -30,7 +30,7 @@ public class KleineKubusjes{
         this.vlakjes[4] = new Vlakken(hoeken[1],hoeken[2],hoeken[6],hoeken[5]); // linkerzijvlak
         this.vlakjes[5] = new Vlakken(hoeken[4],hoeken[5],hoeken[6],hoeken[7]); // achtervlak
     }
-    public void kleuren() {
-
+    public Vlakken[] geefVlakken() {
+        return this.vlakjes;
     }
 }
