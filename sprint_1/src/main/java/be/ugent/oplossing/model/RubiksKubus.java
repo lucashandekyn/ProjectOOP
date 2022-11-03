@@ -25,7 +25,6 @@ public class RubiksKubus implements IRubikCube {
             this.groteKubus.add(kleinKub);
             zijdes.addAll(List.of(kleinKub.geefVlakken()));
         }
-
     }
 
     @Override

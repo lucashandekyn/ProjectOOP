@@ -7,10 +7,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-
 public class KleineKubusjes{
     private Vlakken[] vlakjes;
-
     public KleineKubusjes(Point3D centrum) {
         Point3D[] hoeken = {
                 new Point3D(centrum.getX() + 1, centrum.getY() + 1, centrum.getZ() +1),

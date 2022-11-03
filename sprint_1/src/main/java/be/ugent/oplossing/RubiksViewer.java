@@ -55,9 +55,9 @@ public class RubiksViewer extends Application {
     private List<IFace> initRubikCube() throws FileNotFoundException {
         // Haal deze regels uit commentaar; dan zal het RubiksKubus-object gebruikt worden
         // Maak je eigen implementatie van de rubiks interface.
-        IRubikCube cube = new RubiksKubus();
-        return cube.getAllFaces();
-//        return RubiksReader.ReadFromFile("test.csv");
+//        IRubikCube cube = new RubiksKubus();
+//        return cube.getAllFaces();
+        return RubiksReader.ReadFromFile("test.csv");
     }
 
     private void addCamera(Scene scene) {
