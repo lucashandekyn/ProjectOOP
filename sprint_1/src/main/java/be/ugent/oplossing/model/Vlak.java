@@ -3,11 +3,11 @@ package be.ugent.oplossing.model;
 import javafx.geometry.Point3D;
 import javafx.scene.paint.Color;
 
-public class Vlakken implements IFace{
+public class Vlak implements IFace{
     private Point3D[] hoeken;
     private Color kleur;
 
-    public Vlakken(Point3D hoeka, Point3D hoekb, Point3D hoekc, Point3D hoekd) {
+    public Vlak(Point3D hoeka, Point3D hoekb, Point3D hoekc, Point3D hoekd) {
         hoeken = new Point3D[4];// 4 hoekpunten van 1 vlakje
         this.hoeken[0] = hoeka;
         this.hoeken[1] = hoekb;

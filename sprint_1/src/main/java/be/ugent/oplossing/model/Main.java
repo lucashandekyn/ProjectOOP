@@ -13,7 +13,9 @@ public class Main {
         test_1();
     }
 
-    public static void test_1() {
+    public static List<IFace> test_1() {
+        RubiksKubus kubtest = new RubiksKubus();
+        return kubtest.getAllFaces();
     }
 
     public static void test_2() {
