@@ -7,10 +7,10 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 public class RubiksKubus implements IRubikCube {
-    private List<KleineKubusjes> groteKubus;
+//    private List<KleineKubusjes> groteKubus;
     private List<IFace> zijdes;
     public RubiksKubus() {
-        this.groteKubus = new ArrayList<>();
+//        this.groteKubus = new ArrayList<>();
         this.zijdes = new ArrayList<>();
 
         Color[] boven = {Color.BLACK, Color.BLACK, Color.WHITE};
@@ -25,7 +25,7 @@ public class RubiksKubus implements IRubikCube {
                 for (int z = -2; z<=2;z+=2) {
                     Color[] kleuren = {vrvlak[(x+2)/2],boven[(z+2)/2],onvlak[(z+2)/2],rzvlak[(y+2)/2],lzvlak[(y+2)/2],arvlak[(x+2)/2]};
                     KleineKubusjes kleinKub = new KleineKubusjes(new Point3D(x, y, z),kleuren);
-                    this.groteKubus.add(kleinKub);
+//                    this.groteKubus.add(kleinKub);
                     this.zijdes.addAll(List.of(kleinKub.geefVlakken()));
                 }
             }
