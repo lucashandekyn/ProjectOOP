@@ -57,7 +57,7 @@ public class Vlakje implements IFace {
         return builder.toString();
     }
 
-    
+
     @Override
     public Color getFaceColor() {
         return kleur;
