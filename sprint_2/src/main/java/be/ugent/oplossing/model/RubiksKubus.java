@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-
+// TODO you should do this
 public class RubiksKubus implements IRubikCube {
 
     private List<Kubusje> kubusjes;
@@ -35,7 +35,6 @@ public class RubiksKubus implements IRubikCube {
             }
             kubusjes.add(new Kubusje(x, y, z, kleuren));
         }
-
     }
 
     // Dit kan je gebruiken om zelf te testen, zolang de view er nog niet is.
@@ -79,5 +78,4 @@ public class RubiksKubus implements IRubikCube {
     public List<Kubusje> getKubusjes() {
         return kubusjes;
     }
-
 }
