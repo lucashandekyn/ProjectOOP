@@ -70,5 +70,4 @@ public class Vlakje implements IFace {
         }
         return ptn;
     }
-
 }
