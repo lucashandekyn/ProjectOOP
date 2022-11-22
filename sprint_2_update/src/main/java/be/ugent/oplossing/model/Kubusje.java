@@ -1,6 +1,7 @@
 package be.ugent.oplossing.model;
 
 import javafx.geometry.Point3D;
+import javafx.scene.paint.Color;
 
 //       ^ Y
 //       |
@@ -125,12 +126,35 @@ public class Kubusje {
         return builder.toString();
     }
 
+    public boolean isDraaiend(Color color) {
+        if(color.equals(Color.RED) && this.centrum.getX() == 2){
+            return true;
+        }
+        if(color.equals(Color.ORANGE) && this.centrum.getX() == -2){
+            return true;
+        }
+        if(color.equals(Color.BLUE) && this.centrum.getZ() == -2){
+            return true;
+        }
+        if(color.equals(Color.GREEN) && this.centrum.getZ() == 2){
+            return true;
+        }
+        if(color.equals(Color.WHITE) && this.centrum.getY() == -2){
+            return true;
+        }
+        if(color.equals(Color.YELLOW) && this.centrum.getY() == 2){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     public Vlakje[] getVlakjes(){
         return vlakjes;
     }
 
 
     public Point3D getCentrum() {return centrum.getLocation();}
-
 
 }

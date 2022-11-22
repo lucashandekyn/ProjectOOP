@@ -47,6 +47,10 @@ public class Vlakje implements IFace {
         hoekpunten.add(p);
     }
 
+    public List<Hoekpunt> getHoekpunten() {
+        return hoekpunten;
+    }
+
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder("");

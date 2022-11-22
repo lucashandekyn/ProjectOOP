@@ -68,71 +68,29 @@ public class RubiksKubus implements IRubikCube{
 
     @Override
     public List<IFace> getRotation(Color color, int degree) {
-        List<IFace> kopielijst = new ArrayList<>();
-        if (color == Color.WHITE) {
-            //rotatie rond y-axis met bepaalde degree
-            for (int i = 0; i < kubusjes.size(); i++){
-                if(kubusjes.get(i).getCentrum().getY()==2) {
-                    rotatie.getTheta(degree);
-                    Point3D newx = rotatie.getRoty(kubusjes.get(i).getCentrum());
-                    kopielijst.add(null);
-                }
-            }
-        }
-        if (color == Color.YELLOW) {
-            //rotatie rond y-axis met bepaalde degree
-            for (int i = 0; i < kubusjes.size(); i++){
-            }
-        }
-        if (color == Color.BLUE) {
-            //rotatie rond x-axis met bepaalde degree
-            for (int i = 0; i < kubusjes.size(); i++){
-            }
-        }
-        if (color == Color.GREEN) {
-            //rotatie rond x-axis met bepaalde degree
-            for (int i = 0; i < kubusjes.size(); i++){
-            }
-        }
-        if (color == Color.ORANGE){
-            //rotatie rond z-axis met bepaalde degree
-            for (int i = 0; i < kubusjes.size(); i++){
-            }
-        }
-        if (color == Color.RED) {
-            //rotatie rond z-axis met bepaalde degree
-            for (int i = 0; i < kubusjes.size(); i++){
-            }
-        }
-        return null; // hele kubus teruggeven
+        return getAllFaces(); // hele kubus teruggeven
     }
 
     @Override
     public void rotate(Color color, boolean clockwise) {
-        if (color == Color.WHITE || color == Color.YELLOW) {
-            if (clockwise == true) {
-                //rotate rond y-axis
-            }
-            else {
-                //rotate rond y-axis met negatieve hoek
-            }
+       if(clockwise){
+           rotatie.setTheta(90);
+       }
+       else {
+           rotatie.setTheta(-90);
+       }
+       for(int i = 0; i<kubusjes.size();i++){
+           if (kubusjes.get(i).isDraaiend(color)) {
+               Vlakje[] vlakjes = kubusjes.get(i).getVlakjes();
+               for (int j = 0; j < 6; j++) {
+                   List<Hoekpunt> hoeken = vlakjes[j].getHoekpunten();
+                   for (int x = 0; x < 4; x++) {
+                       hoeken.get(x).setLocation(rotatie.rotate(color,hoeken.get(x).getLocation()));
+                   }
+               }
+           }
         }
-        if (color == Color.ORANGE || color == Color.RED) {
-            if (clockwise == true) {
-                //rotate rond x-axis
-            }
-            else {
-                //rotate rond x-axis met negatieve hoek
-            }
-        }
-        if (color == Color.BLUE || color == Color.GREEN) {
-            if (clockwise == true) {
-                //rotate rond z-axis
-            }
-            else {
-                //rotate rond z-axis met negatieve hoek
-            }
-        }
+        System.out.println(toString());
     }
 
     private Point3D transformatie(Point3D loc, double hoek, double rot[][]) {
