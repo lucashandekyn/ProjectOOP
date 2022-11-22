@@ -25,6 +25,7 @@ public class Hoekpunt {
     public double getZ() {
         return loc.getZ();
     }
+
     // Deze getter zou een kopie kunnen geven
     // om memory-violations te voorkomen (zie later in theorie),
     // maar veel zal dat niet helpen:

@@ -1,12 +1,12 @@
 package be.ugent.oplossing.model;
 
 import be.ugent.oplossing.show.RubiksReader;
+import javafx.geometry.Point3D;
 import javafx.scene.paint.Color;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-// TODO you should do this
 public class RubiksKubus implements IRubikCube {
 
     private List<Kubusje> kubusjes;
@@ -74,7 +74,9 @@ public class RubiksKubus implements IRubikCube {
         System.out.println("RubiksKubus::rotate nog niet geimplementeerd");
         // vervang
     }
-
+    private Point3D transformation(Point3D loc, double hoek, double rot[][]) {
+        return loc;
+    }
     public List<Kubusje> getKubusjes() {
         return kubusjes;
     }
