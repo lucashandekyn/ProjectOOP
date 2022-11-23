@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="view_model_sprint_2_start" />
+        <module name="sprint_2_update" />
         <module name="view_model_sprint_1_start" />
         <module name="view_model_sprint_1_start_zonder_hints" />
         <module name="sprint_2" />

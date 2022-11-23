@@ -16,6 +16,7 @@ public class Kubusje {
     private Hoekpunt centrum;
     private Hoekpunt[] hoekpunten;
     private Vlakje[] vlakjes;
+    private Rotate rotatieh = new Rotate();
 
     // Onderstaande constanten zorgen ervoor dat code leesbaar en snel controleerbaar is.
     // Ze bepalen de volgorde waarin de vlakken opgeslagen worden in de array 'vlakjes'.
@@ -148,6 +149,9 @@ public class Kubusje {
         else {
             return false;
         }
+    }
+    public void setCentrum(Color kleur){
+        centrum.setLocation(rotatieh.rotate(kleur, centrum.getLocation()));
     }
 
     public Vlakje[] getVlakjes(){

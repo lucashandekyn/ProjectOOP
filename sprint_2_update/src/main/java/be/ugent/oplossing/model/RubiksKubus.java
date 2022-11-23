@@ -68,7 +68,7 @@ public class RubiksKubus implements IRubikCube{
 
     @Override
     public List<IFace> getRotation(Color color, int degree) {
-        return getAllFaces(); // hele kubus teruggeven
+        return getAllFaces(); // hele kbubus tergurgeven voor testen
     }
 
     @Override
@@ -81,6 +81,7 @@ public class RubiksKubus implements IRubikCube{
        }
        for(int i = 0; i<kubusjes.size();i++){
            if (kubusjes.get(i).isDraaiend(color)) {
+               kubusjes.get(i).setCentrum(color);
                Vlakje[] vlakjes = kubusjes.get(i).getVlakjes();
                for (int j = 0; j < 6; j++) {
                    List<Hoekpunt> hoeken = vlakjes[j].getHoekpunten();
@@ -89,8 +90,7 @@ public class RubiksKubus implements IRubikCube{
                    }
                }
            }
-        }
-        System.out.println(toString());
+       }
     }
 
     private Point3D transformatie(Point3D loc, double hoek, double rot[][]) {
