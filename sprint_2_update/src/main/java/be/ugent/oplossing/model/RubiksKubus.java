@@ -79,18 +79,18 @@ public class RubiksKubus implements IRubikCube{
        else {
            rotatie.setTheta(-90);
        }
-       for(int i = 0; i<kubusjes.size();i++){
-           if (kubusjes.get(i).isDraaiend(color)) {
-               kubusjes.get(i).setCentrum(color);
-               Vlakje[] vlakjes = kubusjes.get(i).getVlakjes();
-               for (int j = 0; j < 6; j++) {
-                   List<Hoekpunt> hoeken = vlakjes[j].getHoekpunten();
-                   for (int x = 0; x < 4; x++) {
-                       hoeken.get(x).setLocation(rotatie.rotate(color,hoeken.get(x).getLocation()));
-                   }
-               }
-           }
-       }
+        for (Kubusje kubusje : kubusjes) {
+            if (kubusje.isDraaiend(color)) {
+                kubusje.setCentrum(color);
+                Vlakje[] vlakjes = kubusje.getVlakjes();
+                for (int j = 0; j < 6; j++) {
+                    List<Hoekpunt> hoeken = vlakjes[j].getHoekpunten();
+                    for (int x = 0; x < 4; x++) {
+                        hoeken.get(x).setLocation(rotatie.rotate(color, hoeken.get(x).getLocation()));
+                    }
+                }
+            }
+        }
     }
 
     private Point3D transformatie(Point3D loc, double hoek, double rot[][]) {

@@ -7,18 +7,18 @@ public class Rotate {
     private double theta; //public, want er mag aan veranderd worden?
     //private color kleurvlak;
     private Kubusje kubus;
-    private double cos = Math.cos(this.theta);
-    private double sin = Math.sin(this.theta);
+    private double cos;
+    private double sin;
 
-    private double[][] rotx = {{1, 0, 0}, {0, cos, -sin}, {0, sin, cos}};
-    private double[][] roty = {{cos, 0, sin}, {0, 1, 0}, {-sin, 0, cos}};
-    private double[][] rotz = {{cos, -sin, 0}, {sin, cos, 0}, {0, 0, 1}};
 
     public void setTheta(double hoek) {
         this.theta = Math.toRadians(hoek);
     }
 
     public Point3D getRotx(Point3D punt) {
+        this.cos = Math.cos(this.theta);
+        this.sin = Math.sin(this.theta);
+        double[][] rotx = {{1, 0, 0}, {0, cos, -sin}, {0, sin, cos}};
         double apunt[] = {punt.getX(), punt.getY(), punt.getZ()};
         double xnew = 0;
         double ynew = 0;
@@ -33,6 +33,9 @@ public class Rotate {
     }
 
     public Point3D getRoty(Point3D punt) {
+        this.cos = Math.cos(this.theta);
+        this.sin = Math.sin(this.theta);
+        double[][] roty = {{cos, 0, sin}, {0, 1, 0}, {-sin, 0, cos}};
         double apunt[] = {punt.getX(), punt.getY(), punt.getZ()};
         double xnew = 0;
         double ynew = 0;
@@ -47,6 +50,9 @@ public class Rotate {
     }
 
     public Point3D getRotz(Point3D punt) {
+        this.cos = Math.cos(this.theta);
+        this.sin = Math.sin(this.theta);
+        double[][] rotz = {{cos, -sin, 0}, {sin, cos, 0}, {0, 0, 1}};
         double apunt[] = {punt.getX(), punt.getY(), punt.getZ()};
         double xnew = 0;
         double ynew = 0;
