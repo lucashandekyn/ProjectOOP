@@ -68,7 +68,29 @@ public class RubiksKubus implements IRubikCube{
 
     @Override
     public List<IFace> getRotation(Color color, int degree) {
-        return getAllFaces(); // hele kbubus tergurgeven voor testen
+        rotatie.setTheta(degree);
+        List<IFace> templist = new ArrayList<>();
+        for (Kubusje kubusje : kubusjes) {
+            if (kubusje.isDraaiend(color)) {
+                Vlakje[] vlakjes = kubusje.getVlakjes();
+                for (int j = 0; j < 6; j++) {
+                    Vlakje tempvlak = new Vlakje(vlakjes[j].getFaceColor());
+                    List<Hoekpunt> temphoeken = vlakjes[j].getHoekpunten();
+                    for (int x = 0; x < 4; x++) {
+                       Point3D temphoek = rotatie.rotate( color, temphoeken.get(x).getLocation());
+                       tempvlak.voegHoekPuntToe(temphoek);
+                    }
+                    templist.add(tempvlak);
+                }
+            }
+            else{
+                Vlakje[] tempvlakken = kubusje.getVlakjes();
+                for(int j = 0; j<6;j++){
+                    templist.add(tempvlakken[j]);
+                }
+            }
+        }
+        return templist; // hele kbubus tergurgeven voor testen
     }
 
     @Override
@@ -81,21 +103,16 @@ public class RubiksKubus implements IRubikCube{
        }
         for (Kubusje kubusje : kubusjes) {
             if (kubusje.isDraaiend(color)) {
-                kubusje.setCentrum(color);
+                rotatie.setRotate(color,kubusje.getCentrum());
                 Vlakje[] vlakjes = kubusje.getVlakjes();
                 for (int j = 0; j < 6; j++) {
                     List<Hoekpunt> hoeken = vlakjes[j].getHoekpunten();
                     for (int x = 0; x < 4; x++) {
-                        hoeken.get(x).setLocation(rotatie.rotate(color, hoeken.get(x).getLocation()));
+                        rotatie.setRotate(color, hoeken.get(x));
                     }
                 }
             }
         }
-    }
-
-    private Point3D transformatie(Point3D loc, double hoek, double rot[][]) {
-
-        return loc;
     }
 
     public List<Kubusje> getKubusjes(){

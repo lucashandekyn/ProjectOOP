@@ -86,4 +86,9 @@ public class Rotate {
         }
         return null;
     }
+    public void setRotate(Color color, Hoekpunt hoekpunt){
+        Point3D tempHoek = new Point3D(hoekpunt.getX(), hoekpunt.getY(), hoekpunt.getZ());
+        tempHoek = rotate(color,tempHoek);
+        hoekpunt.setLocation(tempHoek);
+    }
 }

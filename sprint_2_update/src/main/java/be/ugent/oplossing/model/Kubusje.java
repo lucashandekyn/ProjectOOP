@@ -150,15 +150,12 @@ public class Kubusje {
             return false;
         }
     }
-    public void setCentrum(Color kleur){
-        centrum.setLocation(rotatieh.rotate(kleur, centrum.getLocation()));
-    }
 
+    public Hoekpunt getCentrum(){
+        return this.centrum;
+    }
     public Vlakje[] getVlakjes(){
         return vlakjes;
     }
-
-
-    public Point3D getCentrum() {return centrum.getLocation();}
 
 }

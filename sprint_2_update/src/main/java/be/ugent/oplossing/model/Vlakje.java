@@ -47,6 +47,10 @@ public class Vlakje implements IFace {
         hoekpunten.add(p);
     }
 
+    public void voegHoekPuntToe(Point3D p){
+        Hoekpunt hoekpunt = new Hoekpunt(p.getX(),p.getY(),p.getZ());
+        hoekpunten.add(hoekpunt);
+    }
     public List<Hoekpunt> getHoekpunten() {
         return hoekpunten;
     }
