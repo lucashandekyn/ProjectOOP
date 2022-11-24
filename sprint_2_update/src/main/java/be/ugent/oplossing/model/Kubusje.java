@@ -154,6 +154,15 @@ public class Kubusje {
     public Hoekpunt getCentrum(){
         return this.centrum;
     }
+
+    public Hoekpunt[] getHoekpunten(){
+        return hoekpunten;
+    }
+    public void setCentrum(Point3D tempcentrum) {
+        this.centrum = new Hoekpunt(Math.round(tempcentrum.getX()), Math.round(tempcentrum.getY()), Math.round(tempcentrum.getZ()));
+        System.out.println(centrum.getX() +" "+ centrum.getY() + " " +centrum.getZ());
+    }
+
     public Vlakje[] getVlakjes(){
         return vlakjes;
     }

@@ -103,13 +103,10 @@ public class RubiksKubus implements IRubikCube{
        }
         for (Kubusje kubusje : kubusjes) {
             if (kubusje.isDraaiend(color)) {
-                rotatie.setRotate(color,kubusje.getCentrum();
-                Vlakje[] vlakjes = kubusje.getVlakjes();
-                for (int j = 0; j < 6; j++) {
-                    List<Hoekpunt> hoeken = vlakjes[j].getHoekpunten();
-                    for (int x = 0; x < 4; x++) {
-                        rotatie.setRotate(color, hoeken.get(x));
-                    }
+                kubusje.setCentrum(rotatie.rotate(color,kubusje.getCentrum().getLocation()));
+                Hoekpunt[] hoekpunten = kubusje.getHoekpunten();
+                for(int j = 0; j<8;j++){
+                    rotatie.setRotate(color,hoekpunten[j]);
                 }
             }
         }

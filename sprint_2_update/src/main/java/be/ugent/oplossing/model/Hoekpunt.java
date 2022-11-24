@@ -37,6 +37,7 @@ public class Hoekpunt {
     // We willen hoekpunten een nieuwe locatie kunnen geven.
     // Dat zal gebeuren bij het roteren van kubusjes.
     public void setLocation(Point3D loc){
+
         this.loc = loc;
     }
 
