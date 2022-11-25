@@ -62,6 +62,4 @@ public class Main {
             System.out.println("foutje, bestand niet gevonden");
         }
     }
-
-
 }
